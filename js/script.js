@@ -29,3 +29,31 @@ function start() {
       console.error(error);
     });
 }
+
+
+
+function avec_ville() {
+  
+  const apiWeather = new API_WEATHER(document.getElementById('city-input').value);
+  
+  apiWeather
+    .fetchTodayForecast()
+    .then(function(response) {
+      
+      const data = response.data;
+
+      const main = data.weather[0].main;
+      const description = data.weather[0].description;
+      const temp = data.main.temp;
+      const icon = apiWeather.getHTMLElementFromIcon(data.weather[0].icon);
+
+      document.getElementById('today-forecast-main').innerHTML = main;
+      document.getElementById('today-forecast-more-info').innerHTML = description;
+      document.getElementById('icon-weather-container').innerHTML = icon;
+      document.getElementById('today-forecast-temp').innerHTML = `${temp}°C`;
+      
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
+}
