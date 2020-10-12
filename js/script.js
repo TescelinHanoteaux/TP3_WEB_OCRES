@@ -31,7 +31,6 @@ function start() {
 }
 
 
-
 function avec_ville() {
   
   const apiWeather = new API_WEATHER(document.getElementById('city-input').value);

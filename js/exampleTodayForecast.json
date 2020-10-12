@@ -1,5 +1,6 @@
 {
   "coord": { "lon": 2.35, "lat": 48.86 },
+  "cnt":7,
   "weather": [
     { "id": 501, "main": "Rain", "description": "moderate rain", "icon": "10n" }
   ],
